@@ -1,7 +1,6 @@
 .container {
-  display: grid;
+  display: flex;
   height: 100vh;
-  grid: 'container1 container2';
 }
 
 .container1 {
@@ -9,13 +8,19 @@
   background-image: url('/login_bg1.svg');
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  flex: 2;
 }
 
 .container2 {
   grid-area: container2;
-  height: 100vh;
-  overflow-y: auto;
+  flex: 3;
+  overflow-y: scroll;
+  overflow-wrap: normal;
+}
+
+.container1, .container2 {
+  display: flex;
+  flex-direction: column;
 }
 
 .container2__form {
