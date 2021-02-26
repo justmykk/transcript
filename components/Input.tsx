@@ -1,0 +1,56 @@
+import { CSSProperties } from 'react';
+
+type InputType = {
+  placeholder: string;
+  inputType?: 'password' | 'email' | 'number' | 'tel' | 'text' | 'date';
+  icon?: string;
+  value: string;
+  onChange: (arg0: string) => void;
+  containerStyle?: CSSProperties;
+};
+
+export function AppInput(props: InputType) {
+  return (
+    <>
+      <div style={{ width: '100%', marginBottom: 20, ...props.containerStyle }}>
+        <p className="label">{props.placeholder}</p>
+        <div className="container">
+          <input
+            value={props.value}
+            onChange={(ev) => props.onChange(ev.target.value)}
+            className="container__input"
+            type={props.inputType && 'text'}
+          />
+          {props.icon && <img src={`/${props.icon}.svg`} />}
+        </div>
+      </div>
+
+      <style jsx>{`
+        .label {
+          color: var(--text-color);
+          margin: 0;
+          font-size: 18px;
+          font-weight: 500;
+          margin-bottom: 5px;
+        }
+        .container {
+          display: flex;
+          flex-direction: row;
+          background-color: var(--light-grey);
+          height: 50px;
+          border-radius: 5px;
+          align-items: center;
+          padding: 0 20px;
+        }
+        .container__input {
+          border: none;
+          outline: none;
+          background-color: transparent;
+          height: 100%;
+          flex: 1;
+          font-size: 16px;
+        }
+      `}</style>
+    </>
+  );
+}

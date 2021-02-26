@@ -1,0 +1,65 @@
+.container {
+  display: grid;
+  height: 100vh;
+  grid: 'container1 container2';
+}
+
+.container1 {
+  grid-area: container1;
+  background-image: url('/login_bg1.svg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+.container2 {
+  grid-area: container2;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.container2__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.newAccount {
+  color: rgba(112, 112, 112, 0.7);
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.nameRow {
+    display: flex;
+}
+
+.subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.backRow {
+    display: flex;
+    align-items: center;
+}
+
+.backRow > p {
+    font-weight: 500;
+    font-size: 14px;
+}
