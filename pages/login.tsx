@@ -39,7 +39,7 @@ export default function Login() {
             </button>
           </form>
 
-          <div className={styles.row} style={{marginBottom: 100}}>
+          <div className={styles.row}>
             <p>Remember Me</p>
             <Link href="/password-reset"><a>Forgot Password?</a></Link>
           </div>
