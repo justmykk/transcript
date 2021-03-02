@@ -5,7 +5,7 @@
 
 .container1 {
   grid-area: container1;
-  background-image: url('/login_bg1.svg');
+  background-image: url('/login_1.png');
   background-position: center;
   background-size: cover;
   flex: 2;
@@ -66,6 +66,8 @@
 .backRow {
   display: flex;
   align-items: center;
+  cursor: pointer;
+margin-bottom: 20px;
 }
 
 .backRow > p {
@@ -89,6 +91,10 @@
   }
 
   .newAccount {
+    font-size: 14px;
+  }
+
+  .subtitle {
     font-size: 14px;
   }
 }

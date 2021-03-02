@@ -1,6 +1,7 @@
 import { AppInput } from '../components/Input';
 import styles from '../styles/Login.module.css';
 import Link from 'next/link';
+import { Logo } from '../components/Logo';
 
 export default function Login() {
   return (
@@ -9,7 +10,7 @@ export default function Login() {
 
       <div className={styles.container2}>
         <div className={styles.container2__form}>
-          <img src="/logo.svg" className="logo" />
+          <Logo />
 
           <p className="form-title" style={{ marginBottom: 50 }}>
             Welcome Back
@@ -41,7 +42,9 @@ export default function Login() {
 
           <div className={styles.row}>
             <p>Remember Me</p>
-            <Link href="/password-reset"><a>Forgot Password?</a></Link>
+            <Link href="/password-reset">
+              <a>Forgot Password?</a>
+            </Link>
           </div>
 
           <p className={styles.newAccount}>

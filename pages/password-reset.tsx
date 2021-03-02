@@ -1,16 +1,25 @@
 import { AppInput } from '../components/Input';
 import styles from '../styles/Login.module.css';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { FormEvent } from 'react';
+import { Logo } from '../components/Logo';
 
 export default function PasswordReset() {
+  const router = useRouter();
+
+  function submitForm(ev: FormEvent) {
+    ev.preventDefault();
+    router.push('/new-password');
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.container1}></div>
 
       <div className={styles.container2}>
         <div className={styles.container2__form}>
-          <img src="/logo.svg" className="logo" />
-
+          <Logo />
+          
           <p className="form-title" style={{ marginBottom: 30 }}>
             Forgot Password
           </p>
@@ -20,7 +29,7 @@ export default function PasswordReset() {
             reset link
           </p>
 
-          <form style={{ width: '100%' }}>
+          <form style={{ width: '100%' }} onSubmit={submitForm}>
             <AppInput
               placeholder="Email"
               onChange={(val) => console.log(val)}
@@ -33,9 +42,9 @@ export default function PasswordReset() {
             <button className="button" style={{ marginBottom: 20 }}>
               Submit
             </button>
-            <div className={styles.backRow}>
-                <img src="/back_arrow.svg"/>
-                <p>Go back</p>
+            <div className={styles.backRow} onClick={() => router.back()}>
+              <img src="/back_arrow.svg" style={{ marginRight: 10 }} />
+              <p>Go back</p>
             </div>
           </form>
         </div>

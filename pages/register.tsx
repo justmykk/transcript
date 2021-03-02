@@ -1,6 +1,7 @@
 import { AppInput } from '../components/Input';
 import styles from '../styles/Login.module.css';
 import Link from 'next/link';
+import { Logo } from '../components/Logo';
 
 export default function Register() {
   return (
@@ -9,7 +10,7 @@ export default function Register() {
 
       <div className={styles.container2}>
         <div className={styles.container2__form}>
-          <img src="/logo.svg" className="logo" />
+          <Logo />
 
           <p className="form-title" style={{ marginBottom: 30 }}>
             Sign up
@@ -22,7 +23,7 @@ export default function Register() {
                 onChange={(val) => console.log(val)}
                 value=""
               />
-              <div style={{width: 50}} />
+              <div style={{ width: 50 }} />
               <AppInput
                 placeholder="Last Name"
                 onChange={(val) => console.log(val)}
@@ -72,7 +73,10 @@ export default function Register() {
           </form>
 
           <p className={styles.newAccount}>
-            Already have an account? <Link href="/login"><a>Sign In</a></Link>
+            Already have an account?{' '}
+            <Link href="/login">
+              <a>Sign In</a>
+            </Link>
           </p>
         </div>
       </div>
