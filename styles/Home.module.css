@@ -1,0 +1,23 @@
+.section {
+    height:700px;
+    display: flex;
+    background-color: var(--light-color);
+}
+
+.section > div {
+    flex: 1;
+}
+
+.sectionOneImage {
+    background: url('/home_1.png') center no-repeat;
+    background-size: cover;
+}
+
+.sectionOneLeft{
+padding-left: 100px;
+}
+
+.sectionOneLeft > h1 {
+    font-size: 45px;
+    font-weight: 800;
+}
