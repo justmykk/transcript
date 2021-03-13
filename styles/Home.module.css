@@ -1,23 +1,84 @@
 .section {
-    height:700px;
-    display: flex;
-    background-color: var(--light-color);
-}
-
-.section > div {
-    flex: 1;
+  height: 700px;
+  display: flex;
+  background-color: var(--light-color);
 }
 
 .sectionOneImage {
-    background: url('/home_1.png') center no-repeat;
-    background-size: cover;
+  background: url('/home_1.png') center no-repeat;
+  background-size: cover;
+  flex: 3;
 }
 
-.sectionOneLeft{
-padding-left: 100px;
+.sectionOneLeft {
+  padding-left: 100px;
+  flex: 2;
 }
 
 .sectionOneLeft > h1 {
-    font-size: 45px;
-    font-weight: 800;
+  font-size: 45px;
+  font-weight: 800;
+  line-height: 56px;
+  margin-bottom: 25px;
+}
+
+.sectionOneLeft > p {
+  color: var(--text-color);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+.sectionOneLeft h6 {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.iconRow {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.iconRow > div {
+  text-align: center;
+}
+
+.iconRow > div > p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 21px;
+  text-align: center;
+}
+
+.sectionLine {
+  height: 1px;
+  background-color: #e9e9e9;
+  flex: 1;
+  margin-left: 4px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 56px;
+}
+
+.sectionTwoLeft {
+  flex: 3;
+  background: url('/home_2.png') center no-repeat;
+  background-size: cover;
+}
+
+.sectionTwoRight {
+  flex: 2;
+  margin-left: 50px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.whySection {
+    padding: 82px 100px;
 }

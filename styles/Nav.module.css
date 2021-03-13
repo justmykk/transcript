@@ -1,6 +1,9 @@
 .navbar {
   background: var(--light-color);
   height: 108px;
+  position: fixed;
+  left: 0;
+  right: 0;
 }
 
 .navContainer {
