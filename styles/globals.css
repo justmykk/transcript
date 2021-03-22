@@ -4,6 +4,8 @@
   --light-text: #707070;
   --light-grey: #F0F0F0;
   --light-color: #f9f9f9;
+  --bg-color: #EAEDEF;
+  --tab-text: #272727;
 
   --app-font: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -15,6 +17,7 @@ body {
   margin: 0;
   font-family: var(--app-font);
   height: 100%;
+  background-color: var(--bg-color);
 }
 
 input, div, p, h2, a, button {

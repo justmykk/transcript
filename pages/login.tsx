@@ -2,8 +2,17 @@ import { AppInput } from '../components/Input';
 import styles from '../styles/Login.module.css';
 import Link from 'next/link';
 import { Logo } from '../components/Logo';
+import { FormEvent } from 'react';
+import { useRouter } from 'next/router';
 
 export default function Login() {
+  const router = useRouter();
+
+  const onSubmit = (ev: FormEvent) => {
+    ev.preventDefault();
+    router.push('/dashboard');
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.container1}></div>
@@ -16,7 +25,7 @@ export default function Login() {
             Welcome Back
           </p>
 
-          <form style={{ width: '100%' }}>
+          <form style={{ width: '100%' }} onSubmit={onSubmit}>
             <AppInput
               placeholder="Email"
               onChange={(val) => console.log(val)}
@@ -35,7 +44,11 @@ export default function Login() {
               containerStyle={{ marginBottom: 30 }}
             />
 
-            <button className="button" style={{ marginBottom: 20 }}>
+            <button
+              type="submit"
+              className="button"
+              style={{ marginBottom: 20 }}
+            >
               Sign In
             </button>
           </form>

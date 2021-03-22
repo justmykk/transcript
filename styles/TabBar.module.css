@@ -1,0 +1,24 @@
+.nav {
+  height: 70px;
+  background-color: #fff;
+  width: 100%;
+}
+
+.navRow {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.navItem {
+  height: 100%;
+  padding: 0 10px;
+  margin: 0 20px;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
