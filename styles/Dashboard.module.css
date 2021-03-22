@@ -1,0 +1,39 @@
+.cardRow {
+    display: flex;
+    justify-content: center;
+}
+
+.tableTopRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.emptyContainer {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.emptyContainer > p{
+    color: var(--text-colors);
+}
+
+.emptyContainerOne {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 30px;
+}
+
+.emptyContainerTwo {
+    font-size: 16px;
+    color: var(--text-color);
+    font-weight: 100;
+}

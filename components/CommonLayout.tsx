@@ -9,10 +9,15 @@ export const CommonLayout: React.FC = (props) => {
         <div>
           <CommonAppBar />
           <TabBar />
-
-          {props.children}
+          <div className="content">{props.children}</div>
         </div>
       </main>
+
+      <style jsx>{`
+        .content {
+          padding: 30px 100px
+        }
+      `}</style>
     </>
   );
 };
