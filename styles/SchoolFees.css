@@ -1,0 +1,66 @@
+.schoolfees {
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  margin-top: 30px;
+  padding: 150px 50px;
+}
+
+.schoolfees__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+.schoolfees__title {
+  font-weight: 600;
+  font-size: 50px;
+  color: var(--text-color);
+  line-height: 75px;
+}
+
+.schoolfees__subtitle {
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 42px;
+  color: #3a464c;
+}
+
+.schoolfees__subtitle--highlight {
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.schoolfees__notify {
+  color: var(--light-text);
+}
+
+.schoolfees__form {
+  height: 60px;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.schoolfees__form > input {
+  border-radius: 5px 0px 0px 5px;
+  background: #f0f0f0;
+  outline: none;
+  width: 95%;
+  height: 100%;
+  border: none;
+  font-size: 16px;
+  padding: 0 20px;
+}
+
+.schoolfees__form > button {
+  background-color: var(--primary-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: absolute;
+  right: 0;
+  border: 2px #fff solid;
+}
