@@ -35,7 +35,7 @@ export const EditImage = () => {
         fontSize={14}
         label="Upload Image"
         onClick={onUpload}
-        width={140}
+        width={160}
         buttonColor="var(--green-color)"
       />
 
