@@ -58,4 +58,32 @@
 
 .applyContentFooter {
   justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.applySpacerLeft {
+  flex: 1;
+  margin-right: 25px;
+}
+
+.applySpacerRight {
+  flex: 1;
+  margin-left: 25px;
+}
+
+.applyAmount {
+  background: rgba(39, 39, 39, 0.1);
+  border-radius: 10px;
+  width: 307px;
+  padding: 15px 20px;
+  justify-content: space-between;
+}
+
+.applyAmount > p:first-child {
+  font-weight: 500;
+}
+
+.applyAmount > p:last-child {
+  font-weight: 600;
+  font-weight: 18px;
 }

@@ -1,9 +1,12 @@
 import { useRouter } from 'next/router';
-import { type } from 'node:os';
 import React, { useState } from 'react';
 import { AppButton } from '../../components/AppButton';
 import { CommonLayout } from '../../components/CommonLayout';
+import { PurposeOfTranscript } from '../../components/transcript/PurposeOfTranscript';
+import { SchoolDetails } from '../../components/transcript/SchoolDetails';
 import { SelectInstitution } from '../../components/transcript/SelectInstitution';
+import { TranscriptAmount } from '../../components/transcript/TranscriptAmount';
+import { TranscriptDetails } from '../../components/transcript/TranscriptDetails';
 
 const PAGE_TITLES = [
   'Select Insitution',
@@ -43,8 +46,15 @@ const ApplyTranscript = () => {
         <div className="applyContentBody">
           {view === 1 && <SelectInstitution />}
 
+          {view === 2 && <SchoolDetails />}
+
+          {view === 3 && <PurposeOfTranscript />}
+
+          {view === 4 && <TranscriptDetails />}
+
           <div className="row applyContentFooter">
-            <div></div>
+            <div>{view === 4 && <TranscriptAmount />}</div>
+
             <AppButton label="Continue" width={150} onClick={onContinue} />
           </div>
         </div>
