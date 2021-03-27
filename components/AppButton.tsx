@@ -11,6 +11,7 @@ interface Props {
   onClick?: () => void;
   href?: string;
   label: string;
+  padding?: string;
 }
 
 export const AppButton: React.FC<Props> = (props) => {
@@ -20,6 +21,7 @@ export const AppButton: React.FC<Props> = (props) => {
     fontSize: props.fontSize ?? 20,
     backgroundColor: props.buttonColor ?? 'var(--primary-color)',
     color: props.fontColor ?? '#fff',
+    padding: props.padding || '15px 20px'
   };
 
   return (
@@ -39,7 +41,6 @@ export const AppButton: React.FC<Props> = (props) => {
       <style jsx>
         {`
           .app-button {
-            padding: 15px 20px;
             border-radius: 5px;
             border: none;
             font-family: var(--app-font);

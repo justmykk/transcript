@@ -1,5 +1,4 @@
 import { FormEvent } from 'react';
-import { CommonAppBar } from '../components/CommonAppBar';
 import { CommonLayout } from '../components/CommonLayout';
 
 const SchoolFees = () => {

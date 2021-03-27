@@ -5,21 +5,26 @@ type InputType = {
   inputType?: 'password' | 'email' | 'number' | 'tel' | 'text' | 'date';
   icon?: string;
   value: string;
-  onChange: (arg0: string) => void;
+  onChange?: (arg0: string) => void;
   containerStyle?: CSSProperties;
+  labelStyle?: CSSProperties;
+  readOnly?: boolean;
 };
 
 export function AppInput(props: InputType) {
   return (
     <>
       <div style={{ width: '100%', marginBottom: 20, ...props.containerStyle }}>
-        <p className="label">{props.placeholder}</p>
+        <p className="label" style={props.labelStyle}>
+          {props.placeholder}
+        </p>
         <div className="container">
           <input
             value={props.value}
             onChange={(ev) => props.onChange(ev.target.value)}
             className="container__input"
             type={props.inputType && 'text'}
+            readOnly={props.readOnly || false}
           />
           {props.icon && <img src={`/${props.icon}.svg`} />}
         </div>
