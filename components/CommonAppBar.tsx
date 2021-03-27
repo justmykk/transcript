@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 export const CommonAppBar = () => {
@@ -5,7 +6,11 @@ export const CommonAppBar = () => {
     <>
       <nav className="commonNav">
         <div className="commonNav__div">
-          <img src="/white_logo.svg" alt="logo" height={30} />
+          <Link href="/dashboard">
+            <a>
+              <img src="/white_logo.svg" alt="logo" height={30} />
+            </a>
+          </Link>
 
           <div className="commonNav__right">
             <img src="/notify.svg" alt="notification" />

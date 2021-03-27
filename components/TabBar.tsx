@@ -34,7 +34,7 @@ export function TabBar(props: Props) {
         <Link href="/transcript">
           <a
             className={styles.navItem}
-            style={path === '/transcript' ? activeItem : {}}
+            style={path.indexOf('/transcript') >= 0 ? activeItem : {}}
           >
             Transcript
           </a>

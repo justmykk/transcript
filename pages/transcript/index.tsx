@@ -10,12 +10,12 @@ import { TransactionTable } from '../../components/table/TransactionTable';
 
 const Transcript = () => {
   const array = [
-    {status: 'Pending'},
-    {status: 'Successful'},
-    {status: 'Failed'},
-    {status: 'Successful'},
-    {status: 'Successful'}
-  ]
+    { status: 'Pending' },
+    { status: 'Successful' },
+    { status: 'Failed' },
+    { status: 'Successful' },
+    { status: 'Successful' },
+  ];
 
   return (
     <CommonLayout>
@@ -25,7 +25,12 @@ const Transcript = () => {
         <DashboardCard title="Total Value of Transaction" value="NGN 200,000" />
         <div style={{ flex: 1 }} />
         <div style={{ flex: 1 }}>
-          <AppButton label="Apply for Transcript" fontSize={14} />
+          <AppButton
+            label="Apply for Transcript"
+            isLink
+            href="/transcript/apply"
+            fontSize={14}
+          />
         </div>
       </div>
 
@@ -35,7 +40,11 @@ const Transcript = () => {
       </div>
 
       {array.length < 1 && (
-        <EmptyTransaction showButton emptyImage="empty_transcript" />
+        <EmptyTransaction
+          showButton
+          emptyImage="empty_transcript"
+          buttonLink="/transcript/apply"
+        />
       )}
 
       {array.length > 0 && <TransactionTable list={array} />}

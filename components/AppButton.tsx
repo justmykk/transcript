@@ -17,8 +17,8 @@ interface Props {
 export const AppButton: React.FC<Props> = (props) => {
   const style: CSSProperties = {
     width: props.width ?? '100%',
-    fontWeight: props.fontWeight ?? 400,
-    fontSize: props.fontSize ?? 20,
+    fontWeight: props.fontWeight ?? 500,
+    fontSize: props.fontSize ?? 16,
     backgroundColor: props.buttonColor ?? 'var(--primary-color)',
     color: props.fontColor ?? '#fff',
     padding: props.padding || '15px 20px'

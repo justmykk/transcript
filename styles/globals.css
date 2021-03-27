@@ -2,17 +2,17 @@
   --primary-color: #0084ff;
   --text-color: #272727;
   --light-text: #707070;
-  --light-grey: #F0F0F0;
+  --light-grey: #f0f0f0;
   --light-color: #f9f9f9;
-  --bg-color: #EAEDEF;
+  --bg-color: #eaedef;
   --tab-text: #272727;
-  --green-color: #36DA33;
-  --pending-color: #FFCC00;
-  --success-color: #00C700;
-  --danger-color: #FF0008;
+  --green-color: #36da33;
+  --pending-color: #ffcc00;
+  --success-color: #00c700;
+  --danger-color: #ff0008;
 
-  --app-font: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --app-font: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 html,
@@ -24,11 +24,23 @@ body {
   background-color: var(--bg-color);
 }
 
-input, div, p, h2, a, button {
+input,
+div,
+p,
+h2,
+a,
+button,
+select {
   font-family: var(--app-font);
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   margin: 0;
 }
 
@@ -93,6 +105,29 @@ a {
 
 .row {
   display: flex;
+}
+
+.appSelect {
+  height: 50px;
+  border: 1px solid rgba(39, 39, 39, 0.6);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  margin-bottom: 20px;
+}
+
+.appSelect > select {
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+.appSelectLabel {
+  font-weight: 400;
+  margin-bottom: 5px;
+  color: var(--text-color);
 }
 
 @media screen and (max-width: 450px) {

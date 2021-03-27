@@ -3,8 +3,8 @@ import { AppButton } from './AppButton';
 
 interface Props {
   emptyImage?: string;
-  onButtonClick?: () => void;
   showButton?: boolean;
+  buttonLink?: string;
 }
 
 export const EmptyTransaction: React.FC<Props> = (props) => {
@@ -22,7 +22,8 @@ export const EmptyTransaction: React.FC<Props> = (props) => {
         <div style={{ marginTop: 40 }}>
           <AppButton
             label="Apply for Transcript"
-            onClick={props.onButtonClick}
+            isLink
+            href={props.buttonLink}
             fontSize={14}
           />
         </div>

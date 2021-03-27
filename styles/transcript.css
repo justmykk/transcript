@@ -5,3 +5,57 @@
   margin-top: 40px;
   margin-bottom: 20px;
 }
+
+.applyBackButton {
+  padding: 12px 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  width: 100px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+}
+
+.applyContent {
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.applyContentHeader {
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.applyContentHeader > p {
+  font-weight: 600;
+  margin-left: 20px;
+}
+
+.applyStepCounter {
+  background-color: var(--primary-color);
+  padding: 10px 12px;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.applyContentBody {
+  padding-left: 108px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fullSelect {
+  width: 100%;
+}
+
+.applyContentFooter {
+  justify-content: space-between;
+}
