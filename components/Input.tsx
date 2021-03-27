@@ -8,7 +8,9 @@ type InputType = {
   onChange?: (arg0: string) => void;
   containerStyle?: CSSProperties;
   labelStyle?: CSSProperties;
+  inputStyle?: CSSProperties;
   readOnly?: boolean;
+  onTogglePassword?: () => void;
 };
 
 export function AppInput(props: InputType) {
@@ -18,15 +20,17 @@ export function AppInput(props: InputType) {
         <p className="label" style={props.labelStyle}>
           {props.placeholder}
         </p>
-        <div className="container">
+        <div className="container" style={props.inputStyle}>
           <input
             value={props.value}
             onChange={(ev) => props.onChange(ev.target.value)}
             className="container__input"
-            type={props.inputType && 'text'}
+            type={props.inputType || 'text'}
             readOnly={props.readOnly || false}
           />
-          {props.icon && <img src={`/${props.icon}.svg`} />}
+          {props.icon && (
+            <img onClick={props.onTogglePassword} src={`/${props.icon}.svg`} />
+          )}
         </div>
       </div>
 

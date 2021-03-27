@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react';
+import React, { CSSProperties, useState } from 'react';
 import { AppButton } from '../AppButton';
 import { AppInput } from '../Input';
 import { Spacer } from '../Spacer';
@@ -8,44 +8,59 @@ const LABEL_STYLE: CSSProperties = {
   fontWeight: 'normal',
 };
 
-export const ProfileInfo: React.FC<{ onEdit: () => void }> = (props) => {
+const INPUT_STYLE: CSSProperties = {
+  backgroundColor: '#fff',
+  border: '1px solid rgba(39, 39, 39, 0.6)'
+};
+
+export const EditProfile = () => {
+  const [fn, setFn] = useState('');
+  const [ln, setLn] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+
   return (
     <div>
       <div className="row">
         <AppInput
-          onChange={(val) => console.log(val)}
-          value="Afuwape"
+          onChange={setFn}
+          value={fn}
           placeholder="First Name"
           labelStyle={LABEL_STYLE}
-          readOnly
+          inputStyle={INPUT_STYLE}
         />
         <Spacer type="horizontal" value={72} />
         <AppInput
-          value="Abiodun"
+          value={ln}
           placeholder="Last Name"
+          onChange={setLn}
           labelStyle={LABEL_STYLE}
-          readOnly
+          inputStyle={INPUT_STYLE}
         />
       </div>
 
       <div className="row">
         <AppInput
-          value="mail@email.com"
+          value={email}
+          onChange={setEmail}
           placeholder="Email"
+          inputType="email"
           labelStyle={LABEL_STYLE}
-          readOnly
+          inputStyle={INPUT_STYLE}
         />
         <Spacer type="horizontal" value={72} />
         <AppInput
-          value="07039429722"
+          value={phone}
+          onChange={setPhone}
           placeholder="Mobile Number"
+          inputStyle={INPUT_STYLE}
           labelStyle={LABEL_STYLE}
-          readOnly
+          inputType="tel"
         />
       </div>
 
       <div className="settings__editButton">
-        <AppButton label="Edit Profile" width={160} onClick={props.onEdit} />
+        <AppButton label="Update Profile" width={190} />
       </div>
     </div>
   );

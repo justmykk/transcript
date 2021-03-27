@@ -1,9 +1,14 @@
+import React, { useState } from 'react';
 import { CommonLayout } from '../components/CommonLayout';
 import { EditImage } from '../components/settings/EditImage';
 import { SettingsNav } from '../components/settings/SettingsNav';
 import { ProfileInfo } from '../components/settings/ProfileInfo';
+import { EditProfile } from '../components/settings/EditProfile';
+import { ChangePassword } from '../components/settings/ChangePassword';
 
 const Settings = () => {
+  const [view, setView] = useState<'profile' | 'edit' | 'password'>('profile');
+
   return (
     <CommonLayout>
       <div className="settings">
@@ -14,11 +19,15 @@ const Settings = () => {
             Here you can edit your profile & change your password.
           </p>
 
-          <SettingsNav />
+          <SettingsNav current={view} setCurrent={setView} />
 
-          <EditImage />
+          {view !== 'password' && <EditImage />}
 
-          <ProfileInfo />
+          {view === 'profile' && <ProfileInfo onEdit={() => setView('edit')} />}
+
+          {view === 'edit' && <EditProfile />}
+
+          {view === 'password' && <ChangePassword />}
         </div>
       </div>
     </CommonLayout>

@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
 
-export const SettingsNav = () => {
-  const [current, setCurrent] = useState('profile');
+interface Props {
+  current: string;
+  setCurrent: (args0: 'profile' | 'edit' | 'password') => void;
+}
 
+export const SettingsNav: React.FC<Props> = (props) => {
   return (
     <div className="settings__nav">
       <p
-        onClick={() => setCurrent('profile')}
-        className={current === 'profile' ? 'settings__nav--active' : ''}
+        onClick={() => props.setCurrent('profile')}
+        className={props.current === 'profile' ? 'settings__nav--active' : ''}
       >
         Profile
       </p>
       <p
-        onClick={() => setCurrent('edit')}
-        className={current === 'edit' ? 'settings__nav--active' : ''}
+        onClick={() => props.setCurrent('edit')}
+        className={props.current === 'edit' ? 'settings__nav--active' : ''}
       >
         Edit Profile
       </p>
       <p
-        onClick={() => setCurrent('password')}
-        className={current === 'password' ? 'settings__nav--active' : ''}
+        onClick={() => props.setCurrent('password')}
+        className={props.current === 'password' ? 'settings__nav--active' : ''}
       >
         Change Password
       </p>
