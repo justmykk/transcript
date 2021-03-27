@@ -1,6 +1,8 @@
 import '../styles/globals.css';
 import '../styles/SchoolFees.css';
 import '../styles/settings.css';
+import '../styles/transcript.css';
+import '../styles/table.css';
 import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {

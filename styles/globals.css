@@ -7,6 +7,9 @@
   --bg-color: #EAEDEF;
   --tab-text: #272727;
   --green-color: #36DA33;
+  --pending-color: #FFCC00;
+  --success-color: #00C700;
+  --danger-color: #FF0008;
 
   --app-font: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
     Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;

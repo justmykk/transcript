@@ -3,7 +3,7 @@ import { CommonLayout } from '../components/CommonLayout';
 import { DashboardCard } from '../components/dashboard/DashboardCard';
 import { AllTransactionFilter } from '../components/dashboard/AllTransactionFilter';
 import { SearchInput } from '../components/dashboard/SearchInput';
-import { EmptyTransaction } from '../components/dashboard/EmptyTransaction';
+import { EmptyTransaction } from '../components/EmptyTransaction';
 
 const Spacer = () => <div style={{ width: 30 }} />;
 
