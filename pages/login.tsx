@@ -4,13 +4,15 @@ import Link from 'next/link';
 import { Logo } from '../components/Logo';
 import { FormEvent } from 'react';
 import { useRouter } from 'next/router';
+import { authService } from '../services/auth';
 
 export default function Login() {
   const router = useRouter();
 
-  const onSubmit = (ev: FormEvent) => {
+  const onSubmit = async (ev: FormEvent) => {
     ev.preventDefault();
-    router.push('/dashboard');
+    await authService.login('email@mail.com', 'password');
+    // router.push('/dashboard');
   };
 
   return (
