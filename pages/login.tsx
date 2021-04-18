@@ -11,6 +11,7 @@ export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
+  const [hidePass, setHidePass] = useState(true);
 
   const router = useRouter();
 
@@ -52,8 +53,9 @@ export default function Login() {
               placeholder="Password"
               onChange={setPassword}
               value={password}
-              inputType="password"
-              icon="eye"
+              inputType={hidePass ? 'password' : 'text'}
+              icon={hidePass ? 'hide' : 'eye'}
+              onTogglePassword={() => setHidePass((val) => !val)}
               containerStyle={{ marginBottom: 30 }}
               required
             />
@@ -66,7 +68,7 @@ export default function Login() {
               style={{ marginBottom: 20 }}
               disabled={loading}
             >
-              Sign In
+              {loading ? 'Loading...' : 'Sign In'}
             </button>
           </form>
 
