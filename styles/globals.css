@@ -86,6 +86,12 @@ a {
   cursor: pointer;
 }
 
+.error-message {
+  font-size: .8rem;
+  color: tomato;
+  margin-bottom: 10px;
+}
+
 .navButton {
   background-color: var(--primary-color);
   padding: 15px 20px;

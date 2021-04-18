@@ -11,6 +11,7 @@ type InputType = {
   inputStyle?: CSSProperties;
   readOnly?: boolean;
   onTogglePassword?: () => void;
+  required?: boolean;
 };
 
 export function AppInput(props: InputType) {
@@ -22,6 +23,7 @@ export function AppInput(props: InputType) {
         </p>
         <div className="container" style={props.inputStyle}>
           <input
+            required={props.required}
             value={props.value}
             onChange={(ev) => props.onChange(ev.target.value)}
             className="container__input"

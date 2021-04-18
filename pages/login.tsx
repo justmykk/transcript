@@ -2,17 +2,27 @@ import { AppInput } from '../components/Input';
 import styles from '../styles/Login.module.css';
 import Link from 'next/link';
 import { Logo } from '../components/Logo';
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/router';
 import { authService } from '../services/auth';
 
 export default function Login() {
+  const [error, setError] = useState<string>(null);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const router = useRouter();
 
   const onSubmit = async (ev: FormEvent) => {
     ev.preventDefault();
-    await authService.login('email@mail.com', 'password');
-    // router.push('/dashboard');
+    setError(null);
+
+    setLoading(true);
+    const message = await authService.login(username, password);
+    setLoading(false);
+
+    message ? setError(message) : router.push('/dashboard');
   };
 
   return (
@@ -30,26 +40,31 @@ export default function Login() {
           <form style={{ width: '100%' }} onSubmit={onSubmit}>
             <AppInput
               placeholder="Email"
-              onChange={(val) => console.log(val)}
-              value=""
+              onChange={setUsername}
+              value={username}
               inputType="email"
               icon="mail"
               containerStyle={{ marginBottom: 30 }}
+              required
             />
 
             <AppInput
               placeholder="Password"
-              onChange={(val) => console.log(val)}
-              value=""
+              onChange={setPassword}
+              value={password}
               inputType="password"
               icon="eye"
               containerStyle={{ marginBottom: 30 }}
+              required
             />
+
+            <p className="error-message">{error}</p>
 
             <button
               type="submit"
               className="button"
               style={{ marginBottom: 20 }}
+              disabled={loading}
             >
               Sign In
             </button>

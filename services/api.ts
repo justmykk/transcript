@@ -1,6 +1,5 @@
 import Axios, { Method, AxiosResponse } from 'axios';
 import { storeService } from './store';
-import { utilService } from './util';
 
 export const postApi = async (url: string, data: any) => {
   return await apiRequest(url, 'post', data);
