@@ -1,17 +1,28 @@
 import { AppInput } from '../components/Input';
 import styles from '../styles/Login.module.css';
 import { useRouter } from 'next/router';
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 import { Logo } from '../components/Logo';
 import { noAuth } from '../hocs/noAuth';
+import { resetService } from '../services/reset';
 
 const PasswordReset = noAuth(() => {
+  const [username, setUsername] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   const router = useRouter();
 
-  function submitForm(ev: FormEvent) {
+  const submitForm = async (ev: FormEvent) => {
     ev.preventDefault();
-    router.push('/new-password');
-  }
+    setError(null);
+
+    setLoading(true);
+    const isError = await resetService.initReset(username);
+    setLoading(false);
+
+    isError ? setError(isError) : router.push('/new-password');
+  };
 
   return (
     <div className={styles.container}>
@@ -33,15 +44,22 @@ const PasswordReset = noAuth(() => {
           <form style={{ width: '100%' }} onSubmit={submitForm}>
             <AppInput
               placeholder="Email"
-              onChange={(val) => console.log(val)}
-              value=""
+              onChange={setUsername}
+              value={username}
               inputType="email"
               icon="mail"
+              required
               containerStyle={{ marginBottom: 30 }}
             />
 
-            <button className="button" style={{ marginBottom: 20 }}>
-              Submit
+            <p className="error-message">{error}</p>
+
+            <button
+              disabled={loading}
+              className="button"
+              style={{ marginBottom: 20 }}
+            >
+              {loading ? 'Submitting...' : 'Submit'}
             </button>
             <div className={styles.backRow} onClick={() => router.back()}>
               <img src="/back_arrow.svg" style={{ marginRight: 10 }} />

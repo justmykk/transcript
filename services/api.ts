@@ -5,6 +5,10 @@ export const postApi = async (url: string, data: any) => {
   return await apiRequest(url, 'post', data);
 };
 
+export const putApi = async (url: string, data: any) => {
+  return await apiRequest(url, 'put', data);
+};
+
 export const getApi = async (url: string) => await apiRequest(url, 'get');
 
 const apiRequest = async (
