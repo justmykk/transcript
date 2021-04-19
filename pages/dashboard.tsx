@@ -4,10 +4,11 @@ import { DashboardCard } from '../components/dashboard/DashboardCard';
 import { AllTransactionFilter } from '../components/dashboard/AllTransactionFilter';
 import { SearchInput } from '../components/dashboard/SearchInput';
 import { EmptyTransaction } from '../components/EmptyTransaction';
+import { withAuth } from '../hocs/withAuth';
 
 const Spacer = () => <div style={{ width: 30 }} />;
 
-const Dashboard = () => {
+const Dashboard = withAuth(() => {
   return (
     <CommonLayout>
       <div className={styles.cardRow}>
@@ -28,6 +29,6 @@ const Dashboard = () => {
       <EmptyTransaction />
     </CommonLayout>
   );
-};
+});
 
 export default Dashboard;

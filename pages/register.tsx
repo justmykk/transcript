@@ -6,8 +6,9 @@ import { FormEvent, useState } from 'react';
 import { RegistrationModel } from '../models/registration-model';
 import { registerService } from '../services/register';
 import { useRouter } from 'next/router';
+import { noAuth } from '../hocs/noAuth';
 
-export default function Register() {
+const Register = noAuth(() => {
   const [user, setUser] = useState<RegistrationModel>(new RegistrationModel());
   const [confirmPass, setConfirmPass] = useState('');
   const [loading, setLoading] = useState(false);
@@ -125,4 +126,6 @@ export default function Register() {
       </div>
     </div>
   );
-}
+});
+
+export default Register;

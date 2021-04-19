@@ -2,8 +2,9 @@ import { AppInput } from '../components/Input';
 import styles from '../styles/Login.module.css';
 import { useRouter } from 'next/router';
 import { Logo } from '../components/Logo';
+import { noAuth } from '../hocs/noAuth';
 
-export default function NewPassword() {
+const NewPassword = noAuth(() => {
   const router = useRouter();
 
   return (
@@ -12,7 +13,7 @@ export default function NewPassword() {
 
       <div className={styles.container2}>
         <div className={styles.container2__form}>
-          <Logo/>
+          <Logo />
 
           <p className="form-title" style={{ marginBottom: 30 }}>
             Enter New Password
@@ -45,7 +46,10 @@ export default function NewPassword() {
             <button className="button" style={{ marginBottom: 20 }}>
               Submit
             </button>
-            <div className={styles.backRow} onClick={() => router.push('/login')}>
+            <div
+              className={styles.backRow}
+              onClick={() => router.push('/login')}
+            >
               <img src="/back_arrow.svg" style={{ marginRight: 10 }} />
               <p>Go back to Sign in</p>
             </div>
@@ -54,4 +58,6 @@ export default function NewPassword() {
       </div>
     </div>
   );
-}
+});
+
+export default NewPassword;

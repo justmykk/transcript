@@ -3,8 +3,9 @@ import styles from '../styles/Login.module.css';
 import { useRouter } from 'next/router';
 import { FormEvent } from 'react';
 import { Logo } from '../components/Logo';
+import { noAuth } from '../hocs/noAuth';
 
-export default function PasswordReset() {
+const PasswordReset = noAuth(() => {
   const router = useRouter();
 
   function submitForm(ev: FormEvent) {
@@ -19,7 +20,7 @@ export default function PasswordReset() {
       <div className={styles.container2}>
         <div className={styles.container2__form}>
           <Logo />
-          
+
           <p className="form-title" style={{ marginBottom: 30 }}>
             Forgot Password
           </p>
@@ -51,4 +52,6 @@ export default function PasswordReset() {
       </div>
     </div>
   );
-}
+});
+
+export default PasswordReset;

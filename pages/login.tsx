@@ -5,8 +5,9 @@ import { Logo } from '../components/Logo';
 import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/router';
 import { authService } from '../services/auth';
+import { noAuth } from '../hocs/noAuth';
 
-export default function Login() {
+const Login = noAuth(() => {
   const [error, setError] = useState<string>(null);
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -89,4 +90,6 @@ export default function Login() {
       </div>
     </div>
   );
-}
+});
+
+export default Login;

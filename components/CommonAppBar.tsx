@@ -1,7 +1,14 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { storeService } from '../services/store';
 
 export const CommonAppBar = () => {
+  const [user, setUser] = useState({ firstName: '', lastName: '' });
+
+  useEffect(() => {
+    setUser(storeService.getUser());
+  }, []);
+
   return (
     <>
       <nav className="commonNav">
@@ -19,7 +26,9 @@ export const CommonAppBar = () => {
               alt="avatar"
               style={{ marginLeft: 50, marginRight: 15 }}
             />
-            <p>Afuwape Abiodun</p>
+            <p>
+              {user.firstName} {user.lastName}
+            </p>
           </div>
         </div>
       </nav>
