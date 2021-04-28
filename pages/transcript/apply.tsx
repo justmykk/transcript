@@ -32,6 +32,10 @@ const ApplyTranscript = () => {
   const [institution, setInstitution] = useState('');
   const [faculty, setFaculty] = useState('');
   const [department, setDepartment] = useState('');
+  const [level, setLevel] = useState('');
+  const [session, setSession] = useState('');
+  const [matricNo, setMatricNo] = useState('');
+  const [course, setCourse] = useState('');
 
   const router = useRouter();
 
@@ -112,6 +116,14 @@ const ApplyTranscript = () => {
               departments={departments}
               department={department}
               onChangeDepartment={setDepartment}
+              level={level}
+              onChangeLevel={setLevel}
+              course={course}
+              onChangeCourse={setCourse}
+              matricNo={matricNo}
+              onChangeMatric={setMatricNo}
+              session={session}
+              onChangeSession={setSession}
             />
           )}
 

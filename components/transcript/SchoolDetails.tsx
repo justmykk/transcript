@@ -9,14 +9,25 @@ interface Props {
   faculty: string;
   departments: Array<DepartmentModel>;
   department: string;
+  level: string;
+  course: string;
+  session: string;
+  matricNo: string;
   onChangeFaculty: (args0: string) => void;
   onChangeDepartment: (args0: string) => void;
+  onChangeLevel: (args0: string) => void;
+  onChangeCourse: (args0: string) => void;
+  onChangeSession: (args0: string) => void;
+  onChangeMatric: (args0: string) => void;
 }
 
 export const SchoolDetails: FC<Props> = (props) => {
-  const arrayOptions = [
-    { label: 'This is label one', value: 'one' },
-    { label: 'This is label two', value: 'two' },
+  const LEVEL_OPTIONS = [
+    { label: '100 Level', value: '100 Level' },
+    { label: '200 Level', value: '200 Level' },
+    { label: '300 Level', value: '300 Level' },
+    { label: '400 Level', value: '400 Level' },
+    { label: '500 Level', value: '500 Level' },
   ];
 
   return (
@@ -63,15 +74,22 @@ export const SchoolDetails: FC<Props> = (props) => {
 
       <div className="row">
         <div className="applySpacerLeft">
-          <AppSelect label="Course" options={arrayOptions} />
+          <AppInput
+            value={props.course}
+            placeholder="Course"
+            labelStyle={LABEL_STYLE}
+            inputStyle={INPUT_STYLE}
+            onChange={props.onChangeCourse}
+          />
         </div>
 
         <div className="applySpacerRight">
           <AppInput
-            value=""
+            value={props.matricNo}
             placeholder="Matric Number"
             labelStyle={LABEL_STYLE}
             inputStyle={INPUT_STYLE}
+            onChange={props.onChangeMatric}
           />
         </div>
       </div>
@@ -79,15 +97,16 @@ export const SchoolDetails: FC<Props> = (props) => {
       <div className="row">
         <div className="applySpacerLeft">
           <AppInput
-            value=""
+            value={props.session}
             placeholder="Session"
             labelStyle={LABEL_STYLE}
             inputStyle={INPUT_STYLE}
+            onChange={props.onChangeSession}
           />
         </div>
 
         <div className="applySpacerRight">
-          <AppSelect label="Level" options={arrayOptions} />
+          <AppSelect value={props.level} onChange={props.onChangeLevel} label="Level" options={LEVEL_OPTIONS} />
         </div>
       </div>
 
