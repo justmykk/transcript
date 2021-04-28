@@ -4,8 +4,7 @@ import { storeService } from './store';
 
 export const authService = {
   async login(username: string, password: string): Promise<string | null> {
-    var res = await postApi('auth', { username, password });
-    utilService.logger('auth', res);
+    var res = await postApi('v1/auth', { username, password });
     
     if (res.status === 200) {
       storeService.saveToken(res.data.authtoken);

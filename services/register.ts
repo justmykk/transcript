@@ -4,7 +4,7 @@ import { authService } from './auth';
 
 export const registerService = {
   async createUser(user: RegistrationModel): Promise<string | null> {
-    const res = await postApi('register', user);
+    const res = await postApi('v1/register', user);
 
     if (res.status === 200) {
         return await authService.login(user.email, user.password);

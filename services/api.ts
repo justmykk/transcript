@@ -18,7 +18,7 @@ const apiRequest = async (
 ): Promise<AxiosResponse> => {
   try {
     return await Axios.request({
-      baseURL: 'https://api-suite.azurewebsites.net/api/v1/',
+      baseURL: 'https://api-suite.azurewebsites.net/api/',
       url,
       method,
       data,

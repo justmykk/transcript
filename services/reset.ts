@@ -1,7 +1,7 @@
 import { ResetModel } from './../models/reset-model';
 import { postApi, putApi } from "./api"
 
-const url = 'user/password/reset';
+const url = 'v1/user/password/reset';
 
 export const resetService = {
     async initReset(username: string): Promise<string> {
